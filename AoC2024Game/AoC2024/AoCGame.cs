@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using AoC2024InputContent;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -47,6 +48,7 @@ public class AoCGame : Game
 
         foreach (DayBase day in _days)
         {
+            day.SetInput(Content.Load<string>("Input\\" + day.GetName()));
             day.LoadContent(Content);
         }
     }
@@ -71,6 +73,7 @@ public class AoCGame : Game
                 if (Keyboard.GetState().IsKeyDown((Keys)IndexToAscii(i)))
                 {
                     _activeDay = _days[i];
+                    _activeDay.Init();
                     break;
                 }
             }
@@ -94,7 +97,7 @@ public class AoCGame : Game
             for(int i = 0; i < _days.Length; ++i)
             {
                 string letter = ((char)IndexToAscii(i)).ToString();
-                _spriteBatch.DrawString(hack12, "Press " + letter + " to run day " + (i + 1), new Vector2(20, 20 + i * 14), Color.Black);
+                _spriteBatch.DrawString(hack12, "Press " + letter + " to run day " + _days[i].GetName(), new Vector2(20, 20 + i * 14), Color.Black);
             }
         }
         else
