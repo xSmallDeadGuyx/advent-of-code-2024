@@ -16,11 +16,11 @@ public class Day1 : DayBase
 
     public override void Draw(GameTime gameTime, ref SpriteBatch spriteBatch)
     {
-        spriteBatch.DrawString(_game.hack20, "Day 1 drawing!", new Vector2(20, 20), Color.Black);
+        spriteBatch.DrawString(_game.hack20, "Day 1 drawing! Input = " + _input, new Vector2(20, 20), Color.Black);
     }
 
     public override void Update(GameTime gameTime)
     {
-        Debug.WriteLine(_input);
+        Debug.WriteLine("Input = " + _input);
     }
 }
