@@ -14,8 +14,11 @@ public class AoCGame : Game
 
     private DayBase _activeDay = null;
 
-    public SpriteFont hack12;
-    public SpriteFont hack20;
+    public SpriteFont Hack12Font;
+    public SpriteFont Hack20Font;
+
+    public Texture2D YesTexture;
+    public Texture2D NoTexture;
 
     public AoCGame()
     {
@@ -25,7 +28,8 @@ public class AoCGame : Game
 
         _days = new DayBase[]
         {
-            new Day1(this)
+            new Day1(this),
+            new Day2(this)
         };
     }
 
@@ -48,8 +52,11 @@ public class AoCGame : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        hack12 = Content.Load<SpriteFont>("Hack12");
-        hack20 = Content.Load<SpriteFont>("Hack20");
+        Hack12Font = Content.Load<SpriteFont>("Hack12");
+        Hack20Font = Content.Load<SpriteFont>("Hack20");
+
+        YesTexture = Content.Load<Texture2D>("Yes");
+        NoTexture = Content.Load<Texture2D>("No");
 
         foreach (DayBase day in _days)
         {
@@ -102,7 +109,7 @@ public class AoCGame : Game
             for(int i = 0; i < _days.Length; ++i)
             {
                 string letter = ((char)IndexToAscii(i)).ToString();
-                _spriteBatch.DrawString(hack12, "Press " + letter + " to run day " + _days[i].GetName(), new Vector2(20, 20 + i * 14), Color.Black);
+                _spriteBatch.DrawString(Hack12Font, "Press " + letter + " to run day " + _days[i].GetName(), new Vector2(20, 20 + i * 14), Color.Black);
             }
         }
         else

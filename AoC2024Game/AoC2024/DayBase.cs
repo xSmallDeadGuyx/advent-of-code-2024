@@ -10,6 +10,7 @@ public abstract class DayBase
     protected AoCGame _game;
     protected string _input;
 
+
     public DayBase(AoCGame game)
     {
         _game = game;

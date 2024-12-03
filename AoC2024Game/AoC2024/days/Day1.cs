@@ -1,10 +1,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
-using MonoGame.Extended.ECS;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace AoC2024;
@@ -132,14 +130,14 @@ public class Day1 : DayBase
     {
         if (!_parsed)
         {
-            spriteBatch.DrawString(_game.hack20, "Parsing", new Vector2(20, 20), Color.Black);
+            spriteBatch.DrawString(_game.Hack20Font, "Parsing", new Vector2(20, 20), Color.Black);
         }
         else
         {
-            spriteBatch.DrawString(_game.hack20, "Sum = " + _sum, new Vector2(20, 20), Color.Black);
+            spriteBatch.DrawString(_game.Hack20Font, "Sum = " + _sum, new Vector2(20, 20), Color.Black);
             if (_finished)
             {
-                spriteBatch.DrawString(_game.hack20, "Similarity = " + _similarity, new Vector2(20, graphics.PreferredBackBufferHeight - 60), Color.Black);
+                spriteBatch.DrawString(_game.Hack20Font, "Similarity = " + _similarity, new Vector2(20, graphics.PreferredBackBufferHeight - 60), Color.Black);
             }
         }
 

@@ -33,3 +33,147 @@
 /processor:AoCInputProcessor
 /build:Input/day1.txt
 
+#begin Input/day2.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day2.txt
+
+#begin Input/day3.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day3.txt
+
+#begin Input/day4.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day4.txt
+
+#begin Input/day5.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day5.txt
+
+#begin Input/day6.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day6.txt
+
+#begin Input/day7.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day7.txt
+
+#begin Input/day8.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day8.txt
+
+#begin Input/day9.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day9.txt
+
+#begin Input/day10.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day10.txt
+
+#begin Input/day11.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day11.txt
+
+#begin Input/day12.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day12.txt
+
+#begin Input/day13.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day13.txt
+
+#begin Input/day14.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day14.txt
+
+#begin Input/day15.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day15.txt
+
+#begin Input/day16.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day16.txt
+
+#begin Input/day17.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day17.txt
+
+#begin Input/day18.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day18.txt
+
+#begin Input/day19.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day19.txt
+
+#begin Input/day20.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day20.txt
+
+#begin Input/day21.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day21.txt
+
+#begin Input/day22.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day22.txt
+
+#begin Input/day23.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day23.txt
+
+#begin Input/day24.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day24.txt
+
+#begin Input/day25.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day25.txt
+
+#begin No.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:No.png
+
+#begin Yes.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Yes.png
+
