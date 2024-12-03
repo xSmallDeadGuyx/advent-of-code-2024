@@ -29,7 +29,8 @@ public class AoCGame : Game
         _days = new DayBase[]
         {
             new Day1(this),
-            new Day2(this)
+            new Day2(this),
+            new Day3(this)
         };
     }
 
