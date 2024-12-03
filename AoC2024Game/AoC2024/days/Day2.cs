@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
 
@@ -31,7 +32,7 @@ public class Day2 : DayBase
 
     private bool _finished = false;
 
-    private bool CheckValid(int[] line)
+    private int FindErrorCase(int[] line)
     {
         int lastVal = line[0];
         int overallDirection = 0;
@@ -53,7 +54,7 @@ public class Day2 : DayBase
 
             if (diff == 0 || Math.Abs(diff) > 3)
             {
-                return false;
+                return j;
             }
 
             int currentDirection = Math.Sign(diff);
@@ -63,13 +64,13 @@ public class Day2 : DayBase
             }
             else if (overallDirection != currentDirection)
             {
-                return false;
+                return j;
             }
 
             lastVal = val;
         }
 
-        return true;
+        return -1;
     }
 
     public override void Update(GameTime gameTime)
@@ -101,19 +102,32 @@ public class Day2 : DayBase
                 _currentMin = _currentLine.Min();
                 _currentMax = _currentLine.Max();
                 _removedLevel = -1;
-                
-                _currentValid = CheckValid(_currentLine);
 
-                if (_currentValid)
+                int error = FindErrorCase(_currentLine);
+
+                if (error == -1)
                 {
+                    _currentValid = true;
                     _part1Sum++;
                     _part2Sum++;
                 }
                 else
                 {
-                    for (int j = 0; j < _currentLine.Length; ++j)
+                    _currentValid = false;
+
+                    // When an invalid level is found, the issue is in that level or the previous one.
+                    List<int> possibleErrors = new List<int>{error, error - 1};
+
+                    // Except for when the error is detected on the 3rd level, where the issue could be an invalid direction set by the initial 2 levels.
+                    // In this case, the 2nd level is already added above so just need to add the 1st.
+                    if (error == 2)
                     {
-                        if (CheckValid(_currentLine.Select((x, idx) => (x, idx)).Where((x, idx) => idx != j).Select(x => x.x).ToArray()))
+                       possibleErrors.Add(0);
+                    }
+
+                    foreach (int j in possibleErrors)
+                    {
+                        if (FindErrorCase(_currentLine.Select((x, idx) => (x, idx)).Where((x, idx) => idx != j).Select(x => x.x).ToArray()) == -1)
                         {
                             _removedLevel = j;
                             _currentValid = true;
