@@ -10,8 +10,16 @@
 
 #-------------------------------- References --------------------------------#
 
+/reference:..\..\..\AoC2024InputContent\AoC2024InputContent\bin\Debug\net8.0\AoC2024InputContent.dll
 
 #---------------------------------- Content ---------------------------------#
+
+#begin Hack12.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Hack12.spritefont
 
 #begin Hack20.spritefont
 /importer:FontDescriptionImporter
@@ -20,10 +28,8 @@
 /processorParam:TextureFormat=Compressed
 /build:Hack20.spritefont
 
-#begin Hack12.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Hack12.spritefont
+#begin Input/day1.txt
+/importer:AoCInputImporter
+/processor:AoCInputProcessor
+/build:Input/day1.txt
 

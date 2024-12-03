@@ -9,6 +9,11 @@ public class Day1 : DayBase
 {
     public Day1(AoCGame game) : base(game) {}
 
+    public override string GetName()
+    {
+        return "day1";
+    }
+
     public override void Draw(GameTime gameTime, ref SpriteBatch spriteBatch)
     {
         spriteBatch.DrawString(_game.hack20, "Day 1 drawing!", new Vector2(20, 20), Color.Black);
@@ -16,6 +21,6 @@ public class Day1 : DayBase
 
     public override void Update(GameTime gameTime)
     {
-        Debug.WriteLine("Day 1 updating!");
+        Debug.WriteLine(_input);
     }
 }
