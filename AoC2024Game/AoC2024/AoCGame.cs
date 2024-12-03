@@ -31,6 +31,11 @@ public class AoCGame : Game
 
     protected override void Initialize()
     {
+        _graphics.IsFullScreen = false;
+        _graphics.PreferredBackBufferWidth = 1920;
+        _graphics.PreferredBackBufferHeight = 1080;
+        _graphics.ApplyChanges();
+
         foreach (DayBase day in _days)
         {
             day.Init();
@@ -102,7 +107,7 @@ public class AoCGame : Game
         }
         else
         {
-            _activeDay.Draw(gameTime, ref _spriteBatch);
+            _activeDay.Draw(gameTime, _spriteBatch, _graphics);
         }
 
         _spriteBatch.End();
