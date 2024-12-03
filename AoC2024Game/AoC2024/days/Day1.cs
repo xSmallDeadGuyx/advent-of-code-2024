@@ -59,7 +59,7 @@ public class Day1 : DayBase
             if (!_parsed)
             {
                 string line = ReadNextInputLine();
-                if (line.Length == 0)
+                if (line == null)
                 {
                     _parsed = true;
                 }

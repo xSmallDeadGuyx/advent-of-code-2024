@@ -91,7 +91,7 @@ public class Day2 : DayBase
             for (int i = 0; i <= extraIterations; ++i)
             {
                 string line = ReadNextInputLine();
-                if (line.Length == 0)
+                if (line == null)
                 {
                     _finished = true;
                     return;

@@ -1,4 +1,5 @@
-﻿using AoC2024InputContent;
+﻿using System;
+using AoC2024InputContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -37,8 +38,8 @@ public class AoCGame : Game
     protected override void Initialize()
     {
         _graphics.IsFullScreen = false;
-        _graphics.PreferredBackBufferWidth = 1920;
-        _graphics.PreferredBackBufferHeight = 1080;
+        _graphics.PreferredBackBufferWidth = Math.Min(1920, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width - 20);
+        _graphics.PreferredBackBufferHeight = Math.Min(1080, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height - 80);
         _graphics.ApplyChanges();
 
         foreach (DayBase day in _days)
