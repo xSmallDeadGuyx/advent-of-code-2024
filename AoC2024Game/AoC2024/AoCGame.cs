@@ -30,7 +30,8 @@ public class AoCGame : Game
         {
             new Day1(this),
             new Day2(this),
-            new Day3(this)
+            new Day3(this),
+            new Day4(this)
         };
     }
 
@@ -40,11 +41,6 @@ public class AoCGame : Game
         _graphics.PreferredBackBufferWidth = 1920;
         _graphics.PreferredBackBufferHeight = 1080;
         _graphics.ApplyChanges();
-
-        foreach (DayBase day in _days)
-        {
-            day.Init();
-        }
 
         base.Initialize();
     }
