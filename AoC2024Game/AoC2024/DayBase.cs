@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using System.ComponentModel;
+using System;
+using System.IO;
 
 namespace AoC2024;
 
@@ -9,6 +11,8 @@ public abstract class DayBase
 {
     protected AoCGame _game;
     protected string _input;
+
+    private StringReader _inputReader;
 
 
     public DayBase(AoCGame game)
@@ -30,28 +34,19 @@ public abstract class DayBase
     public abstract void Update(GameTime gameTime);
     public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDeviceManager graphics);
 
-    protected string ReadNextInputLine()
+    protected string? ReadNextInputLine()
     {
         if (_input.Length == 0)
         {
             return "";
         }
 
-        string line;
-
-        int index = _input.IndexOf("\n");
-        if (index < 0)
+        if (_inputReader == null)
         {
-            line = _input;
-            _input = "";
-        }
-        else
-        {
-            line = _input.Substring(0, index - 1);
-            _input = _input.Substring(index + 1);
+            _inputReader = new StringReader(_input);
         }
 
-        return line;
+        return _inputReader.ReadLine();
     }
 
     protected string[] SplitOnWhitespace(string str)
