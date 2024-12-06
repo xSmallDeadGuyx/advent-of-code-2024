@@ -20,6 +20,7 @@ public class AoCGame : Game
 
     public Texture2D YesTexture;
     public Texture2D NoTexture;
+    public Texture2D SquareTexture;
 
     public AoCGame()
     {
@@ -33,7 +34,8 @@ public class AoCGame : Game
             new Day2(this),
             new Day3(this),
             new Day4(this),
-            new Day5(this)
+            new Day5(this),
+            new Day6(this)
         };
     }
 
@@ -56,6 +58,7 @@ public class AoCGame : Game
 
         YesTexture = Content.Load<Texture2D>("Yes");
         NoTexture = Content.Load<Texture2D>("No");
+        SquareTexture = Content.Load<Texture2D>("Square");
 
         foreach (DayBase day in _days)
         {

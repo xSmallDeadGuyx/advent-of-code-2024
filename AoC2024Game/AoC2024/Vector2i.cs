@@ -32,6 +32,21 @@ public struct Vector2i : IEquatable<Vector2i>
         Y = (int)v.Y;
     }
 
+    public Vector2i Rotate90Clockwise()
+    {
+        return new Vector2i(-Y, X);
+    }
+
+    public Vector2i Rotate90CounterClockwise()
+    {
+        return new Vector2i(Y, -X);
+    }
+
+    public Vector2i Rotate180()
+    {
+        return new Vector2i(-X, -Y);
+    }
+
     public bool Equals(Vector2i other)
     {
         return X == other.X && Y == other.Y;
