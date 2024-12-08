@@ -35,7 +35,8 @@ public class AoCGame : Game
             new Day3(this),
             new Day4(this),
             new Day5(this),
-            new Day6(this)
+            new Day6(this),
+            new Day7(this)
         };
     }
 
